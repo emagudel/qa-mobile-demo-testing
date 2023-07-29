@@ -1,0 +1,33 @@
+package com.reto.tasks;
+
+import com.reto.interactions.Scroll;
+import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Performable;
+import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.actions.Click;
+
+import static com.reto.userinterface.ProductsPage.BTN_ADD_TO_CART;
+import static com.reto.userinterface.ProductsPage.LBL_PRODUCT;
+import static net.serenitybdd.screenplay.Tasks.instrumented;
+
+public class AddProduct implements Task {
+
+    private String nameProduct;
+
+    public AddProduct(String nameProduct){
+        this.nameProduct = nameProduct;
+    }
+
+    @Override
+    public <T extends Actor> void performAs(T actor) {
+        actor.attemptsTo(
+                Click.on(LBL_PRODUCT.of(nameProduct)),
+                Scroll.untilVisibleTarget(BTN_ADD_TO_CART),
+                Click.on(BTN_ADD_TO_CART)
+        );
+    }
+
+    public static Performable toTheCart(String nameProduct){
+        return instrumented(AddProduct.class, nameProduct);
+    }
+}
