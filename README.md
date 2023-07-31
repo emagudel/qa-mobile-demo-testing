@@ -16,26 +16,18 @@ Este repositorio contiene un escenario de Autenticación y compra de productos p
 
 ## Automatización Screenplay Mobile
 
-En la rama principal [main](https://github.com/ingjuanfg/screenplay_mobile_automation_project "main") encontrarás 2 features, cada uno con 2 escenarios. Esto es porque aunque hacen lo mismo, uno esta desarrollado para que la asersión se realice con las Questions y Excepción creada manualmente y el otro realiza la validación usando [Serenity Ensure](https://serenity-bdd.github.io/theserenitybook/latest/serenity-screenplay-ensure.html "Serenity Ensure") como libreria.
+En la rama principal [master](https://github.com/emagudel/qa-mobile-demo-testing "master") encontrarás 2 features, cada uno con 1 escenario. Esto es porque aunque hacen lo mismo, uno esta desarrollado para que la asersión se realice con las Questions y Excepción creada manualmente y el otro realiza la validación usando [Serenity Ensure](https://serenity-bdd.github.io/theserenitybook/latest/serenity-screenplay-ensure.html "Serenity Ensure") como libreria.
 
 ## Detalles Importantes
 
-La aplicación usada para realizar los ejemplos es **Sample App Mobile** de Saucelabs. La cual puedes encontrar en el siguiente link para descargar, ya sea el .APK para Android o el .IPA para iOS.
-
-[Sauce Labs Native Sample Application](https://github.com/saucelabs/sample-app-mobile/releases "Sauce Labs Native Sample Application")
-
-Si quieres conocer mas detalle sobre lo que tiene implementado y que puedes hacer, puedes revisarlo en su [repositorio.](https://github.com/saucelabs/sample-app-mobile "repositorio.")
-
+La aplicación usada para realizar los ejemplos es **Dafiti App Mobile**.
 
 ## Configuración para Ejecución
 
-El proyecto cuenta con 5 archivos de extensión **.properties** estos archivos son donde configuramos los capabilities y dispositivos sobre los cuales se quiere ejecutar la prueba.
+El proyecto cuenta con 2 archivos de extensión **.properties** estos archivos son donde configuramos los capabilities y dispositivos sobre los cuales se quiere ejecutar la prueba.
 
-- **serenity.properties:** Este es por defecto. Al ejecutar por medio del IDE o usando el comando general (Especificado abajo) tomará este archivo para su ejecución. En la parte final del archivo estan los capabilities de iOS. Si quieres usar este por defecto, recuerda comentar o descomentar los capabilities del dispositivo que no será ejecutado.
+- **serenity.properties:** Este es por defecto. Al ejecutar por medio del IDE o usando el comando general (Especificado abajo) tomará este archivo para su ejecución. Si quieres usar este por defecto, recuerda comentar o descomentar los capabilities del dispositivo que no será ejecutado.
 - **serenityAndroid.properties:** Este archivo es especifico para ejecutar sobre dispositivos fisicos en Android.
-- **serenityiOS.properties:** Este archivo es especifico para ejecutar sobre dispositivos fisicos en iOS.
-- **serenityKobitonAndroid.properties:** Este archivo es especifico para ejecutar sobre dispositivos reales en Android dispuestos en la granja de Kobiton.
-- **serenityKobitoniOS.properties:** Este archivo es especifico para ejecutar sobre dispositivos reales en iOS dispuestos en la granja de Kobiton.
 
 Para los archivos serenity, serenityAndroid y SerenityiOS los capabilities que deben ser ajustados son los siguientes:
 
@@ -56,8 +48,6 @@ en **GroupID** debes agregar el número del grupo si tu cuenta esta asignada a u
 ## Notas Importantes
 
 - Si al ejecutar te falla porque no encuentra los elementos, por favor revisa el idioma de tu dispositivo, esta aplicación ajusta sus localizadores con base al idioma que este configurado, se ha usado Ingles por defecto. Si quieres trabajar en español debes remapear los objetos o bien, cambiar el idioma de tu dispositivo para ejecutar la prueba y funcione con los locators actuales.
-
-- Los properties que se estan usando para granja son especificamente para Kobiton, cada granja puede tener sus particularidades. Por tal motivo se recomienda acudir a su documentación en caso tal de que se trabaje con una diferente a Kobiton.
 
 ## Ejecución por Terminal
 
