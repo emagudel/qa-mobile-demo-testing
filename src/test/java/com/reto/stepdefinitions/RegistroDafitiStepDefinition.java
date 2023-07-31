@@ -14,21 +14,17 @@ import static net.serenitybdd.screenplay.actors.OnStage.*;
 
 public class RegistroDafitiStepDefinition {
 
-    @When("{word} enters the Create Account functionality in the Dafiti application")
+    @When("{word} enters the Register Account functionality in the Dafiti application")
     public void actorLoginIntoApp(String actor) {
         theActorCalled(actor).attemptsTo(RegistrarCuenta.inDafiti());
     }
 
-    @Then("He should see the product page")
-    public void actorShouldSeeProductsTitle() {
+    @Then("He should see the registration screen")
+    public void actorShouldSeeRegistrationScreen() {
         theActorInTheSpotlight().should(seeThat(
                 RegistroDafiti.isSuccesfully())
                 .orComplainWith(LoginIsNotCompleteException.class, REGISTRO_FAIL_MESSAGE_EXCEPTION)
         );
     }
 
-    @Then("He ensure that is on product page")
-    public void actorShouldSeeProductPage() {
-        withCurrentActor(Ensure.that(LABEL_REGISTRO).isDisplayed());
-    }
 }
